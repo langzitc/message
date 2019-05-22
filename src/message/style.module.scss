@@ -1,0 +1,82 @@
+.messagebox{
+    position: fixed;
+    z-index: 11111;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+.wrap{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+}
+.box + .box{
+    margin-top: 15px;
+}
+.box{
+    padding: 8px 15px;
+    border-radius: 4px;
+    background: #ffffff;
+    pointer-events: all;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    font-size: 14px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: auto;
+    min-width: 100px;
+    display: inline-block;
+    transition: all .2s ease-in-out;
+}
+.success{
+    color: #19be6b;
+}
+.warning{
+    color: #ff9900;
+}
+.error{
+    color: #ed4014;
+}
+.info{
+    color: #2db7f5;
+}
+.label{
+    color: #515a6e;
+    margin-left: 10px;
+}
+@keyframes rotate{
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.loading{
+    i{
+        color: #2db7f5;
+        display: inline-block;
+        animation: rotate 1s linear infinite;        
+    }
+}
+:global{
+    .mtrans-node-enter {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    .mtrans-node-enter-active {
+        opacity: 1;
+        transform: translateY(0px);
+        transition: opacity 400ms, transform 200ms;
+    }
+    .mtrans-node-exit {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .mtrans-node-exit-active {
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 400ms, transform 200ms;
+    }    
+}
